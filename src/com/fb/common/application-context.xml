@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="meeting" class="com.fb.beans.Meeting">
+		<property name="meetingNo" value="35"></property>
+		<property name="description" value="Project Plan Meeting"></property>
+		<property name="scheduleDate" ref="calendar"></property>
+		<property name="participants">
+			<list>
+				<value>Anil</value>
+				<value>Mayur</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="calendar" class="com.fb.beans.CalendarFactoryBean" scope="prototype">
+		<constructor-arg value="30"></constructor-arg>
+		<constructor-arg value="07"></constructor-arg>
+		<constructor-arg value="2017"></constructor-arg>
+		
+	</bean>
+</beans>
